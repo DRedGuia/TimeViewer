@@ -13,9 +13,8 @@ object ClockForm: TClockForm
   DesignTimePPI = 120
   FormStyle = fsSystemStayOnTop
   ShowInTaskBar = stNever
-  SnapOptions.SnapToMonitor = True
   LCLVersion = '4.4.0.0'
-  object Label1: TLabel
+  object Clock: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
     AnchorSideRight.Control = Owner
@@ -32,21 +31,20 @@ object ClockForm: TClockForm
     BorderSpacing.Around = 20
     Caption = 'TimeViewer'
     Color = clNone
-    Font.CharSet = RUSSIAN_CHARSET
+    Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -55
-    Font.Name = 'System'
+    Font.Height = 58
+    Font.Name = 'Tahoma'
     Font.Pitch = fpVariable
-    Font.Quality = fqDraft
+    Font.Quality = fqCleartypeNatural
     Font.Style = [fsBold]
     Layout = tlCenter
     OptimalFill = True
     ParentColor = False
     ParentFont = False
-    OnClick = Label1Click
   end
-  object Timer1: TTimer
-    OnTimer = Timer1Timer
+  object ClockTimer: TTimer
+    OnTimer = ClockTimerTimer
     Left = 32
   end
   object TrayIcon: TTrayIcon
@@ -2169,7 +2167,6 @@ object ClockForm: TClockForm
       FFFF
     }
     Visible = True
-    OnClick = TrayIconClick
   end
   object SettingsPopupMenu: TPopupMenu
     ParentBidiMode = False
