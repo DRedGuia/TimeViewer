@@ -38,10 +38,12 @@ type
     procedure FontSizeBarChange(Sender: TObject);
     procedure FontUnderlineChange(Sender: TObject);
     procedure FontChooseButtonClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure SizeBoxClick(Sender: TObject);
     procedure GroupBox3Click(Sender: TObject);
     procedure TextColorButtonColorChanged(Sender: TObject);
     procedure TransparencyBarChange(Sender: TObject);
+    procedure TransparencyEditChange(Sender: TObject);
   private
 
   public
@@ -62,6 +64,12 @@ Uses ClockUnit;
 procedure TSettingsForm.FontChooseButtonClick(Sender: TObject);
 begin
    FontChoose.Execute;
+end;
+
+procedure TSettingsForm.FormCreate(Sender: TObject);
+begin
+  FontPreview.Font.Assign(ClockForm.Clock.Font);
+  FontPreview.Font.Color := clBlack;
 end;
 
 procedure TSettingsForm.SizeBoxClick(Sender: TObject);
@@ -104,6 +112,17 @@ begin
   Transparency := TransparencyBar.Position;
   TransparencyEdit.Text := IntToStr(Transparency);
   ClockForm.SetClockTransparency(Transparency);
+end;
+
+procedure TSettingsForm.TransparencyEditChange(Sender: TObject);
+begin
+  if TransparencyEdit.Text <> '' then
+  begin
+   Transparency := StrToInt(TransparencyEdit.Text);
+   TransparencyBar.Position := Transparency;
+   TransparencyEdit.Text := IntToStr(Transparency);
+   ClockForm.SetClockTransparency(Transparency);
+  end;
 end;
 
 procedure TSettingsForm.FontUnderlineChange(Sender: TObject);

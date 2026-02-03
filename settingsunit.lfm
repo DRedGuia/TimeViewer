@@ -2128,9 +2128,10 @@ object SettingsForm: TSettingsForm
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFF
   }
-  Position = poDefault
+  Position = poDesktopCenter
   ShowInTaskBar = stAlways
   LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
   object AppearanceGroup: TGroupBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = PositionGroup
@@ -2305,9 +2306,9 @@ object SettingsForm: TSettingsForm
           Constraints.MaxWidth = 50
           Constraints.MinHeight = 30
           Constraints.MinWidth = 50
+          MaxLength = 3
           NumbersOnly = True
           TabOrder = 1
-          Text = 'TransparencyEdit'
           OnChange = TransparencyEditChange
         end
       end
@@ -2402,9 +2403,9 @@ object SettingsForm: TSettingsForm
           Constraints.MaxWidth = 50
           Constraints.MinHeight = 30
           Constraints.MinWidth = 50
+          MaxLength = 3
           NumbersOnly = True
           TabOrder = 0
-          Text = 'FontSizeEdit'
         end
         object FontSizeBar: TTrackBar
           AnchorSideLeft.Control = SizeBox
@@ -2480,9 +2481,15 @@ object SettingsForm: TSettingsForm
   end
   object FontChoose: TFontDialog
     OnClose = FontChooseClose
-    MinFontSize = 160
-    MaxFontSize = 24
-    Options = [fdAnsiOnly, fdEffects, fdNoSizeSel, fdWysiwyg, fdLimitSize]
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -213
+    Font.Name = 'Segoe UI Symbol'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    MinFontSize = 24
+    MaxFontSize = 160
+    Options = [fdAnsiOnly, fdWysiwyg, fdLimitSize]
     Left = 200
     Top = 40
   end

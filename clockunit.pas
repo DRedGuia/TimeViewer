@@ -115,6 +115,7 @@ end;
 
 procedure TClockForm.SetClockTransparency(Alpha: Integer);
 begin
+  if Alpha >=255 then Alpha := 255;
   AlphaBlendValue := Alpha;
 end;
 

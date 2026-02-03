@@ -31,6 +31,7 @@ type
     procedure SetClockPosition(APositionIndex: SmallInt);
     procedure SetClockTextColor(AColor: TColor);
     procedure SetClockBackgroundColor(AColor: TColor);
+    procedure SetClockTransparency(Alpha: Integer);
   end;
 
 var
@@ -110,6 +111,12 @@ end;
 procedure TClockForm.SetClockBackgroundColor(AColor: TColor);
 begin
   Color := AColor;
+end;
+
+procedure TClockForm.SetClockTransparency(Alpha: Integer);
+begin
+  if Alpha >=255 then Alpha := 255
+  AlphaBlendValue := Alpha;
 end;
 
 procedure TClockForm.ExitProgramClick(Sender: TObject);

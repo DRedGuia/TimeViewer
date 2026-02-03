@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit>
       <Unit>
         <Filename Value="clockunit.pas"/>
@@ -21,9 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ClockUnit"/>
-        <TopLine Value="106"/>
-        <CursorPos X="8" Y="118"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="108"/>
+        <CursorPos X="36" Y="118"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -36,9 +36,9 @@
         <UnitName Value="SettingsUnit"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="96"/>
-        <CursorPos X="4" Y="115"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="116"/>
+        <CursorPos X="24" Y="131"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -60,38 +60,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="settingsunit.pas"/>
-        <Caret Line="67" Column="37" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="clockunit.pas"/>
-        <Caret Line="92" TopLine="84"/>
-      </Position>
-      <Position>
-        <Filename Value="clockunit.pas"/>
-        <Caret Line="31" Column="15" TopLine="22"/>
-      </Position>
-      <Position>
-        <Filename Value="clockunit.pas"/>
-        <Caret Line="94" Column="10" TopLine="82"/>
-      </Position>
-      <Position>
-        <Filename Value="settingsunit.pas"/>
-        <Caret Line="68" Column="40" TopLine="60"/>
-      </Position>
-      <Position>
-        <Filename Value="settingsunit.pas"/>
-        <Caret Line="74" Column="3" TopLine="53"/>
-      </Position>
-      <Position>
-        <Filename Value="settingsunit.pas"/>
-        <Caret Line="91" Column="36" TopLine="50"/>
-      </Position>
-      <Position>
-        <Filename Value="settingsunit.pas"/>
-        <Caret Line="81" Column="44" TopLine="74"/>
-      </Position>
       <Position>
         <Filename Value="settingsunit.pas"/>
         <Caret Line="80" Column="57" TopLine="70"/>
@@ -179,6 +147,38 @@
       <Position>
         <Filename Value="settingsunit.pas"/>
         <Caret Line="105" Column="3" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="115" Column="4" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="112" TopLine="65"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="125" Column="4" TopLine="113"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="118" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="71" Column="49" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="clockunit.pas"/>
+        <Caret Line="60" Column="18" TopLine="47"/>
+      </Position>
+      <Position>
+        <Filename Value="settingsunit.pas"/>
+        <Caret Line="119" Column="33" TopLine="108"/>
+      </Position>
+      <Position>
+        <Filename Value="clockunit.pas"/>
+        <Caret Line="118" Column="35" TopLine="111"/>
       </Position>
     </JumpHistory>
     <RunParams>
