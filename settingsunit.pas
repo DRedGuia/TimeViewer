@@ -34,16 +34,15 @@ type
     procedure BackgroundColorButtonColorChanged(Sender: TObject);
     procedure ComboBoxPositionChange(Sender: TObject);
     procedure FontChooseClose(Sender: TObject);
-    procedure FontPreviewClick(Sender: TObject);
     procedure FontSizeBarChange(Sender: TObject);
     procedure FontUnderlineChange(Sender: TObject);
     procedure FontChooseButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure SizeBoxClick(Sender: TObject);
-    procedure GroupBox3Click(Sender: TObject);
     procedure TextColorButtonColorChanged(Sender: TObject);
     procedure TransparencyBarChange(Sender: TObject);
     procedure TransparencyEditChange(Sender: TObject);
+    procedure FontAssign();
+    procedure CheckFontUnderline();
   private
 
   public
@@ -53,6 +52,7 @@ type
 var
   SettingsForm: TSettingsForm;
   FontSize, Transparency: Integer;
+  ClockFont: TFont;
 implementation
 
 Uses ClockUnit;
@@ -68,18 +68,18 @@ end;
 
 procedure TSettingsForm.FormCreate(Sender: TObject);
 begin
-  FontPreview.Font.Assign(ClockForm.Clock.Font);
+  ClockFont := ClockForm.Clock.Font;
+  FontPreview.Font.Assign(ClockFont);
   FontPreview.Font.Color := clBlack;
 end;
 
-procedure TSettingsForm.SizeBoxClick(Sender: TObject);
+procedure TSettingsForm.FontAssign();
 begin
-
-end;
-
-procedure TSettingsForm.GroupBox3Click(Sender: TObject);
-begin
-
+   CheckFontUnderline();
+   FontPreview.Font.Assign(ClockFont);
+   FontPreview.Font.Color := clBlack;
+   ClockForm.SetClockFont(ClockFont);
+   TextColorButtonColorChanged(ClockFont);
 end;
 
 procedure TSettingsForm.TextColorButtonColorChanged(Sender: TObject);
@@ -89,22 +89,16 @@ end;
 
 procedure TSettingsForm.FontChooseClose(Sender: TObject);
 begin
-   FontPreview.Font.Assign(FontChoose.Font);
-   //Apply font if changed
-   If FontChoose.Font <> nil then ClockForm.SetClockFont(FontChoose.Font);
-   TextColorButtonColorChanged(FontChoose);
-end;
-
-procedure TSettingsForm.FontPreviewClick(Sender: TObject);
-begin
-
+  ClockFont := FontChoose.Font;
+  FontAssign();
 end;
 
 procedure TSettingsForm.FontSizeBarChange(Sender: TObject);
 begin
   FontSize := FontSizeBar.Position;
   FontSizeEdit.Text := IntToStr(FontSize);
-  ClockForm.SetClockFontSize(FontSize);
+  ClockFont.Size := FontSize;
+  If ClockFont <> nil then ClockForm.SetClockFont(ClockFont);
 end;
 
 procedure TSettingsForm.TransparencyBarChange(Sender: TObject);
@@ -125,9 +119,21 @@ begin
   end;
 end;
 
+procedure TSettingsForm.CheckFontUnderline();
+begin
+  if FontUnderline.Checked = true then
+  begin
+  ClockFont.Style := ClockFont.Style + [fsUnderline];
+  end
+  else begin
+  ClockFont.Style := ClockFont.Style - [fsUnderline];
+  end;
+end;
+
 procedure TSettingsForm.FontUnderlineChange(Sender: TObject);
 begin
-  ClockForm.SetClockFontUnderline(FontUnderline.Checked);
+  CheckFontUnderline();
+  FontAssign();
 end;
 
 procedure TSettingsForm.ComboBoxPositionChange(Sender: TObject);

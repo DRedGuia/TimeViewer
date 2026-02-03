@@ -2185,7 +2185,6 @@ object SettingsForm: TSettingsForm
         BorderSpacing.Around = 10
         Caption = '12:34:56'
         Layout = tlCenter
-        OnClick = FontPreviewClick
       end
     end
     object ColorGroup: TGroupBox
@@ -2385,7 +2384,6 @@ object SettingsForm: TSettingsForm
         ClientHeight = 31
         ClientWidth = 222
         TabOrder = 1
-        OnClick = SizeBoxClick
         object FontSizeEdit: TEdit
           AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = SizeBox
