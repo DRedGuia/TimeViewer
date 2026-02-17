@@ -2196,7 +2196,7 @@ object SettingsForm: TSettingsForm
       Height = 126
       Top = 5
       Width = 230
-      Anchors = [akTop, akLeft, akRight, akBottom]
+      Anchors = [akTop, akLeft, akBottom]
       AutoSize = True
       BorderSpacing.Around = 5
       Caption = 'Color'
@@ -2277,9 +2277,9 @@ object SettingsForm: TSettingsForm
           Frequency = 16
           LineSize = 4
           Max = 255
+          PageSize = 4
           Position = 0
-          SelEnd = 24
-          SelStart = 160
+          SelStart = 255
           OnChange = TransparencyBarChange
           Anchors = [akTop, akLeft, akRight]
           Color = 3487029
@@ -2313,6 +2313,7 @@ object SettingsForm: TSettingsForm
       end
     end
     object FontGroup: TGroupBox
+      AnchorSideLeft.Control = ColorGroup
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = AppearanceGroup
       AnchorSideRight.Control = AppearanceGroup
@@ -2323,7 +2324,6 @@ object SettingsForm: TSettingsForm
       Top = 5
       Width = 230
       Anchors = [akTop, akLeft, akRight, akBottom]
-      AutoSize = True
       BorderSpacing.Around = 5
       Caption = 'Font'
       ClientHeight = 101
@@ -2414,7 +2414,7 @@ object SettingsForm: TSettingsForm
           Left = 0
           Height = 30
           Top = -4
-          Width = 162
+          Width = 160
           AutoSize = True
           Frequency = 8
           LineSize = 4
@@ -2427,6 +2427,7 @@ object SettingsForm: TSettingsForm
           Anchors = [akTop, akLeft, akRight]
           Color = 3487029
           Constraints.MaxHeight = 30
+          Constraints.MaxWidth = 160
           Constraints.MinHeight = 30
           ParentColor = False
           TabOrder = 1

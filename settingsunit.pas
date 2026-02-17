@@ -71,6 +71,8 @@ begin
   ClockFont := ClockForm.Clock.Font;
   FontPreview.Font.Assign(ClockFont);
   FontPreview.Font.Color := clBlack;
+  FontSizeBar.Position := ClockFont.Size;
+  TransparencyBar.Position := ClockForm.AlphaBlendValue;
 end;
 
 procedure TSettingsForm.FontAssign();
@@ -78,8 +80,8 @@ begin
    CheckFontUnderline();
    FontPreview.Font.Assign(ClockFont);
    FontPreview.Font.Color := clBlack;
-   ClockForm.SetClockFont(ClockFont);
    TextColorButtonColorChanged(ClockFont);
+   ClockForm.SetClockFont(ClockFont);
 end;
 
 procedure TSettingsForm.TextColorButtonColorChanged(Sender: TObject);
@@ -98,7 +100,7 @@ begin
   FontSize := FontSizeBar.Position;
   FontSizeEdit.Text := IntToStr(FontSize);
   ClockFont.Size := FontSize;
-  If ClockFont <> nil then ClockForm.SetClockFont(ClockFont);
+  FontAssign();
 end;
 
 procedure TSettingsForm.TransparencyBarChange(Sender: TObject);

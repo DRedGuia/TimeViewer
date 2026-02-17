@@ -25,7 +25,7 @@ type
   private
 
   public
-    procedure SetClockFontSize(FontSize: Integer);
+    //procedure SetClockFontSize(FontSize: Integer);
     procedure SetClockFont(AFont: TFont);
     procedure SetClockFontUnderline(Toggle: Boolean);
     procedure SetClockPosition(APositionIndex: SmallInt);
@@ -55,10 +55,10 @@ begin
   Clock.Font.Assign(AFont);
 end;
 
-procedure TClockForm.SetClockFontSize(FontSize: Integer);
-begin
-  Clock.Font.Size := FontSize;
-end;
+//procedure TClockForm.SetClockFontSize(FontSize: Integer);
+//begin
+//  Clock.Font.Size := FontSize;
+//end;
 
 procedure TClockForm.SetClockTextColor(AColor: TColor);
 begin
@@ -83,26 +83,31 @@ begin
      begin
      Top := 0;
      Left := 0;
+     Show;
      end;
    1: //Top_Right
      begin
      Top := 0;
      Left := Screen.Width - Width;
+     Show;
      end;
    2: //Bottom_Left
      begin
      Top := Screen.Height - Height;
      Left := 0;
+     Show;
      end;
    3: //Bottom_Right
      begin
      Top := Screen.Height - Height;
      Left := Screen.Width - Width;
+     Show;
      end;
    4: //Center
      begin
      Top := (Screen.Height - Height) div 2;
      Left := (Screen.Width - Width) div 2;
+     Show;
      end;
    end;
 end;
